@@ -39,7 +39,9 @@ ul {
 .list {
   list-style: none;
 }
+
 /* Шапка профиля */
+
 .header {
   border-bottom: 1px solid #ececec;
 }
@@ -96,6 +98,26 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -34px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .site-nav a:hover,
@@ -111,6 +133,10 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts a:hover,
@@ -155,6 +181,10 @@ ul {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -254,8 +284,8 @@ ul {
   letter-spacing: 0.03em;
 }
 
-.footer-contacts a:hover,
-.footer-contacts a:focus {
+.address-link:hover,
+.address-link:focus {
   color: var(--accent-color);
 }
 
@@ -267,7 +297,7 @@ ul {
   align-items: baseline;
 }
 
-.footer-contacts a {
+.address-link {
   margin-bottom: 0px;
   color: var(--footer-contacts-color);
   font-family: Roboto, sans-serif;
@@ -277,6 +307,10 @@ ul {
   letter-spacing: 0.03em;
   text-decoration: none;
   font-style: normal;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .welcome {
@@ -315,6 +349,10 @@ ul {
   border-radius: 50%;
   fill: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon-link:hover,
 .footer-icon-link:focus {
@@ -452,8 +490,31 @@ ul {
 }
 .images-list > img {
   width: 370px;
+  height: auto;
   display: block;
   border: 1px solid transparent;
+}
+
+.work-description {
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  font-size: 14px;
+  font-style: bold;
+  text-align: center;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  height: 70px;
+
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+}
+.description-block {
+  position: relative;
 }
 
 /* Наша команда */
@@ -518,6 +579,10 @@ ul {
   border-radius: 50%;
   fill: var(--items-color);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icons-link:hover,
 .team-icons-link:focus {
@@ -531,6 +596,7 @@ ul {
 }
 
 /* Секция постоянные клиенты */
+
 .clients {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -548,10 +614,20 @@ ul {
   border: 1px solid var(--items-color);
   border-radius: 4px;
   fill: var(--items-color);
+
+  transition-property: fill, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-icons svg:hover,
 .company-icons svg:focus {
   fill: var(--accent-color);
+}
+
+.company-icons svg {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-icons:hover,
 .company-icons:focus {
