@@ -204,6 +204,11 @@ ul {
     0px 3px rgba(0, 0, 0, 0.1);
 }
 
+.button-item li {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* Секция карточек */
 
 .cards-section {
@@ -231,9 +236,41 @@ ul {
   display: block;
 }
 
+.project-hover p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+
+  padding: 63px 24px;
+  color: var(--white-color);
+}
+.project-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 294px;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cards-item:hover .project-hover {
+  transform: translateY(0);
+}
+
+.project-content {
+  position: relative;
+  overflow: hidden;
+}
 .cards-item {
   margin-right: 30px;
   width: 370px;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cards-item:hover,
 .cards-item:focus {
@@ -395,7 +432,7 @@ ul {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.hero button {
+.open-modal {
   padding: 10px 32px;
   border: 0px;
   border-radius: 4px;
@@ -408,13 +445,72 @@ ul {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero button:hover,
-.hero button:focus {
-  color: var(--white-color);
+.open-modal:hover,
+.open-modal:focus {
   background-color: #188ce8;
 }
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  background-color: var(--white-color);
+  width: 528px;
+  height: 581px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  background-color: var(--white-color);
+}
+.modal-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  fill: var(--primary-text-color);
+}
 /* Секция особенности */
 .features-section {
   padding-bottom: 94px;
@@ -499,7 +595,7 @@ ul {
   color: var(--white-color);
   background-color: rgba(47, 48, 58, 0.8);
   font-size: 14px;
-  font-style: bold;
+  font-weight: 700;
   text-align: center;
   line-height: 1.14;
   text-transform: uppercase;
