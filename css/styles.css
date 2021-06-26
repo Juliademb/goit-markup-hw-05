@@ -473,6 +473,7 @@ ul {
 }
 .modal {
   position: absolute;
+  z-index: 3;
   top: 50%;
   left: 50%;
 
@@ -508,7 +509,6 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   fill: var(--primary-text-color);
 }
 /* Секция особенности */
@@ -611,6 +611,7 @@ ul {
 }
 .description-block {
   position: relative;
+  z-index: -1;
 }
 
 /* Наша команда */
