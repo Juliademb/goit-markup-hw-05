@@ -446,9 +446,7 @@ ul {
   line-height: 1.87;
   letter-spacing: 0.06em;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .open-modal:hover,
 .open-modal:focus {
@@ -503,14 +501,19 @@ ul {
   cursor: pointer;
 
   background-color: var(--white-color);
+  fill: var(--primary-text-color);
 }
 .modal-close {
   position: absolute;
   top: 50%;
   left: 50%;
+
+  width: 11px;
+  height: 11px;
   transform: translate(-50%, -50%);
-  fill: var(--primary-text-color);
+  fill: currentColor;
 }
+
 /* Секция особенности */
 .features-section {
   padding-bottom: 94px;
